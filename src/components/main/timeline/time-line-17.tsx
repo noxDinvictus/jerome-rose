@@ -1,4 +1,4 @@
-import TimeLineContainer from '@/components/elements/container';
+import TimeLineContainer from '@/components/elements/timeline-container';
 
 export default function TL17() {
   return <TimeLineContainer leftContent={<Left />} rightContent={<Right />} />;

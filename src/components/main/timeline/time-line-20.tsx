@@ -1,6 +1,6 @@
 'use client';
 
-import TimeLineContainer from '@/components/elements/container';
+import TimeLineContainer from '@/components/elements/timeline-container';
 import useInView from '@/hooks/use-in-view';
 
 export default function TL20() {
