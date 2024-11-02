@@ -1,0 +1,31 @@
+@mixin animate($direction) {
+  animation: #{$direction} 1s ease-in 0s infinite;
+}
+
+@mixin keyframes($name, $translateY) {
+  @keyframes #{$name} {
+    0% {
+      opacity: 0;
+      transform: translate3d(0, $translateY, 0);
+    }
+    50% {
+      opacity: 0.5;
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+}
+
+@include keyframes(count-down, -80%);
+@include keyframes(count-up, 80%);
+
+.animate-count-down {
+  @include animate(count-down);
+}
+
+.animate-count-up {
+  @include animate(count-up);
+}
