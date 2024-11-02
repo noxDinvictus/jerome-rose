@@ -1,23 +1,10 @@
 'use client';
 
 import TimeLineContainer from '@/components/elements/timeline-container';
-import useInView from '@/hooks/use-in-view';
 
 export default function TL20() {
-  const { isInView, elementRef } = useInView();
-
-  console.log({ isInView });
-
   return (
-    <div ref={elementRef}>
-      <TimeLineContainer
-        isHalf
-        leftContent={<Left />}
-        rightContent={<Right />}
-      />
-
-      {isInView ? 'In View' : 'Not In View'}
-    </div>
+    <TimeLineContainer isHalf leftContent={<Left />} rightContent={<Right />} />
   );
 }
 
