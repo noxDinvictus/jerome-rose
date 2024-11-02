@@ -1,5 +1,11 @@
-import Main from '@/components/templates/mian';
+import Footer from '@/components/templates/footer';
+import Main from '@/components/templates/main';
 
 export default function Home() {
-  return <Main />;
+  return (
+    <div className="font-pw">
+      <Main />
+      <Footer />
+    </div>
+  );
 }
