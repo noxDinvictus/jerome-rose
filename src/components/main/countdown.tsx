@@ -97,7 +97,7 @@ function Timers({ time, title, isMarried }: ITimers) {
   const c = twMerge('mb-1 text-center', animate ? animateClass : '');
 
   return (
-    <div className="mb-1 w-24 rounded-lg bg-white p-2 shadow-lg">
+    <div className="mb-1 w-24 rounded-lg bg-white p-2 text-3xl font-bold shadow-lg">
       <h3 className={c}>{time}</h3>
       <p className="w-full text-center text-base">{displayTitle}</p>
     </div>
