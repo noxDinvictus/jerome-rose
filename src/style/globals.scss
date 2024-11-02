@@ -8,6 +8,10 @@
   .center {
     @apply flex items-center justify-center;
   }
+
+  .year {
+    @apply mb-8 text-2xl font-bold;
+  }
 }
 
 main {
