@@ -9,3 +9,12 @@
     @apply flex items-center justify-center;
   }
 }
+
+main {
+  background: linear-gradient(
+    0deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(53, 61, 100, 1) 0%,
+    rgba(240, 201, 186, 1) 100%
+  );
+}
