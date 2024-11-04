@@ -1,18 +1,22 @@
 'use client';
 
+import { useEffect } from 'react';
+
 export default function ProgressBar() {
-  const handleScroll = () => {
-    const scrollPosition = window.scrollY;
-    const windowHeight = window.innerHeight;
-    const documentHeight = document.documentElement.scrollHeight;
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
 
-    const progress = (scrollPosition / (documentHeight - windowHeight)) * 100;
-    const progressBar = document.getElementById('progressBar') as HTMLElement;
+      const progress = (scrollPosition / (documentHeight - windowHeight)) * 100;
+      const progressBar = document.getElementById('progressBar') as HTMLElement;
 
-    if (progressBar) progressBar.style.width = `${progress}%`;
-  };
+      if (progressBar) progressBar.style.width = `${progress}%`;
+    };
 
-  document.addEventListener('scroll', handleScroll);
+    document.addEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <div
