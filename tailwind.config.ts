@@ -40,6 +40,7 @@ const config: Config = {
       },
       fontFamily: {
         pw: ['var(--font-pw)'],
+        allura: ['var(--font-allura)'],
       },
     },
   },
