@@ -4,7 +4,7 @@ import { I } from '@/interface';
 import clsx from 'clsx';
 import { useState } from 'react';
 import AutoExpand from '../../elements/auto-expand';
-import NavButton from './nav-button';
+import NavButton from './button';
 
 export function NavigationResponsive({ navigate }: Readonly<I.Navigate>) {
   const [isOpen, setIsOpen] = useState(false);
