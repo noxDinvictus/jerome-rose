@@ -8,9 +8,12 @@
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky",
-    "prettier": "prettier --write \"**/*.+(ts|tsx|js|json|scss|md)\""
+    "prettier": "prettier --write \"**/*.+(ts|tsx|js|json|scss|md)\"",
+    "run:prod": "yarn build && yarn start"
   },
   "dependencies": {
+    "animate.css": "^4.1.1",
+    "clsx": "^2.1.1",
     "husky": "^9.1.6",
     "lint-staged": "^15.2.10",
     "moment": "^2.30.1",
