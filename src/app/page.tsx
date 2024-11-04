@@ -1,11 +1,18 @@
-import Footer from '@/components/templates/footer';
-import Main from '@/components/templates/main';
+import PageContainer from '@/components/elements/page-container';
+import CountDownTimer from '@/components/main/countdown';
+import Header from '@/components/templates/header';
+import { headerId } from '@/constant';
 
 export default function Home() {
   return (
-    <div className="font-pw">
-      <Main />
-      <Footer />
-    </div>
+    <>
+      <Header />
+      <PageContainer id={headerId.preNup}>
+        <h1 className="animate__animated animate__flipInX text-center text-5xl font-bold text-groom-100">
+          WE ARE GETTING MARRIED !
+        </h1>
+        <CountDownTimer />
+      </PageContainer>
+    </>
   );
 }
