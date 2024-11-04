@@ -1,6 +1,18 @@
+import { I } from '@/interface';
+import 'animate.css';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import '../style/globals.scss';
+
+const allura = localFont({
+  src: [
+    {
+      path: './fonts/Allura-Regular.ttf',
+      weight: '400',
+    },
+  ],
+  variable: '--font-allura',
+});
 
 const pw = localFont({
   src: [
@@ -17,14 +29,10 @@ export const metadata: Metadata = {
   description: 'The wedding of Rose Anne and Jerome',
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<I.Child>) {
   return (
     <html lang="en">
-      <body className={`${pw.variable}`}>{children}</body>
+      <body className={`${allura.variable} ${pw.variable}`}>{children}</body>
     </html>
   );
 }
