@@ -1,0 +1,7 @@
+@for $time from 6 through 10 {
+  .animate {
+    &__delay-#{$time}s {
+      animation-delay: #{$time}s !important;
+    }
+  }
+}
