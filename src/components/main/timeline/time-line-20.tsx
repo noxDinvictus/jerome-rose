@@ -1,5 +1,3 @@
-'use client';
-
 import TimeLineContainer from '@/components/elements/timeline-container';
 
 export default function TL20() {
