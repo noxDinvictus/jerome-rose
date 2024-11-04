@@ -32,3 +32,17 @@ main {
     rgba(240, 201, 186, 1) 100%
   );
 }
+
+.auto-expand {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 500ms;
+
+  &--show {
+    grid-template-rows: 1fr;
+  }
+
+  &__object {
+    overflow: hidden;
+  }
+}
