@@ -21,3 +21,37 @@
     background-position: 0 0;
   }
 }
+
+.header-nav-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  & > button {
+    text-decoration: none;
+    color: #f0c9ba;
+    margin: 10px 0;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      bottom: 0;
+      left: 0;
+      background: #f0c9ba;
+      visibility: hidden;
+      border-radius: 5px;
+      transform: scaleX(0);
+      transition: 0.25s linear;
+    }
+
+    &:hover::before {
+      visibility: visible;
+      -webkit-transform: scaleX(1);
+      -moz-transform: scaleX(1);
+      transform: scaleX(1);
+    }
+  }
+}
