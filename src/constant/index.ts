@@ -7,6 +7,7 @@ export const c = {
 export const headerId = {
   theProposal: 'the-proposal',
   ourStory: 'our-story',
+  preNup: '/',
 };
 
 export const headerNav: I.Navigation[] = [
