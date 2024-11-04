@@ -13,7 +13,7 @@ export default function TimeLineContainer({
   isHalf,
 }: IProps) {
   return (
-    <div className="my-5 flex gap-3 md:flex-col">
+    <section className="my-5 flex gap-3 md:flex-col">
       <div className={twMerge('md:w-full', isHalf ? 'w-1/2' : 'w-1/3')}>
         {leftContent}
       </div>
@@ -21,6 +21,6 @@ export default function TimeLineContainer({
       <div className={twMerge('md:w-full', isHalf ? 'w-1/2' : 'w-2/3')}>
         {rightContent}
       </div>
-    </div>
+    </section>
   );
 }
