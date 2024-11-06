@@ -1,0 +1,48 @@
+@use './components/z.index.scss';
+@use './abstract/helper';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .center {
+    @apply flex items-center justify-center;
+  }
+
+  .year {
+    @apply mb-8 text-2xl font-bold;
+  }
+}
+
+// * don't allow image drag
+img {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+main {
+  background: linear-gradient(
+    0deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(53, 61, 100, 1) 0%,
+    rgba(240, 201, 186, 1) 100%
+  );
+}
+
+.auto-expand {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 500ms;
+
+  &--show {
+    grid-template-rows: 1fr;
+  }
+
+  &__object {
+    overflow: hidden;
+  }
+}
