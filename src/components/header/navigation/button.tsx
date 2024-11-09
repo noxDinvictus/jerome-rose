@@ -10,18 +10,13 @@ interface IProps extends Readonly<I.Navigate> {
   readonly delay?: boolean;
 }
 
-export default function NavigationButton({
-  navigate,
-  className,
-  delay,
-}: IProps) {
+export default function NavigationButton(props: IProps) {
+  const { navigate, className, delay } = props;
+
   const route = usePathname();
 
-  const getName = (data: Readonly<I.Navigation>) => {
-    if (data.id === '/') return data.name;
-
-    if (route.includes(data.id)) return 'Start';
-    else return data.name;
+  const isActive = (data: Readonly<I.Navigation>) => {
+    if (route === data.link) return 'is-active';
   };
 
   return (
@@ -32,9 +27,14 @@ export default function NavigationButton({
             onClick={() => navigate(e)}
             aria-label="navigation toggle"
             key={e.id}
-            className={clsx(className, delay && `animate__delay-${i}s`)}
+            className={clsx(
+              isActive(e),
+              className,
+              delay && `animate__delay-${i}s`,
+            )}
+            name={e.name}
           >
-            {getName(e)}
+            {e.name}
           </button>
         );
       })}
