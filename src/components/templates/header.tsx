@@ -60,10 +60,6 @@ export default function Header() {
     <header id="header" className="font-pw" role="banner">
       <ProgressBar />
 
-      {!initialLoad && (
-        <NavigationBody navigate={navigate} isSticky={isSticky} />
-      )}
-
       <div className="container relative h-screen" ref={navRef}>
         <Image
           src={IMAGES.hero}
@@ -95,6 +91,10 @@ export default function Header() {
           </p>
         </div>
       </div>
+
+      {!initialLoad && (
+        <NavigationBody navigate={navigate} isSticky={isSticky} />
+      )}
     </header>
   );
 }
