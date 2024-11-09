@@ -17,7 +17,7 @@ export const c = {
 };
 
 export const headerId = {
-  preNup: '/',
+  wedding: '/',
   dressCode: 'dressCode',
   giftGuide: 'giftGuide',
   theProposal: 'the-proposal',
@@ -27,19 +27,19 @@ export const headerId = {
 
 export const headerNav: I.Navigation[] = [
   {
-    name: 'Pre-nup',
+    name: 'Wedding',
     id: '/',
     link: '/',
   },
   {
     name: 'The Proposal',
     id: headerId.theProposal,
-    link: '/wedding/the-proposal',
+    link: `/wedding/${headerId.theProposal}`,
   },
   {
     name: 'Our Story',
     id: headerId.ourStory,
-    link: '/wedding/our-story',
+    link: `/wedding/${headerId.ourStory}`,
   },
 ];
 
