@@ -26,13 +26,14 @@ const pw = localFont({
 });
 
 export const metadata: Metadata = {
-  title: 'Rose and Jerome',
-  description: 'The wedding of Rose Anne and Jerome',
+  title: 'Jerome and Rose ',
+  description:
+    'Come Join us to witness the union of 2 beautiful soul. The wedding of Jerome and Rose Anne',
   openGraph: {
     images: [
       {
         url: IMAGES.og,
-        alt: 'Come Join us to witness the union of 2 beautiful soul',
+        alt: 'Wedding pic',
         type: 'image/jpg',
         width: 1200,
         height: 630,
