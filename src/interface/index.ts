@@ -8,7 +8,7 @@ export namespace I {
   export interface Navigation {
     name: string;
     id: string;
-    isLink: boolean;
+    link?: string;
   }
 
   export interface Navigate {
