@@ -1,5 +1,6 @@
 import PageContainer from '@/components/elements/page-container';
 import CountDownTimer from '@/components/main/countdown';
+import WeddingPlace from '@/components/main/wedding-place';
 import Header from '@/components/templates/header';
 import { headerId } from '@/constant';
 
@@ -12,6 +13,7 @@ export default function Home() {
           WE ARE GETTING MARRIED !
         </h1>
         <CountDownTimer />
+        <WeddingPlace />
       </PageContainer>
     </>
   );
