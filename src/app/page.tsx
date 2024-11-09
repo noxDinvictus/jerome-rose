@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <PageContainer id={headerId.preNup}>
+      <PageContainer id={headerId.wedding}>
         <h1 className="animate__animated animate__flipInX text-center text-5xl font-bold text-groom-100">
           WE ARE GETTING MARRIED !
         </h1>
