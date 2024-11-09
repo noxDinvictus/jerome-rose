@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky",
-    "prettier": "prettier --write \"**/*.+(ts|tsx|js|json|scss|md)\"",
+    "lint:check": "prettier --write \"**/*.+(ts|tsx|js|json|scss|md)\"",
     "run:prod": "yarn build && yarn start"
   },
   "dependencies": {
