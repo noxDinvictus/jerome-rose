@@ -14,4 +14,9 @@ export namespace I {
   export interface Navigate {
     navigate(data: Readonly<I.Navigation>): void;
   }
+
+  export interface Image {
+    readonly src: string;
+    readonly alt: string;
+  }
 }
