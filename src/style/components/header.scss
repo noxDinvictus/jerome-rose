@@ -33,7 +33,7 @@
     margin: 10px 0;
     position: relative;
 
-    &::before {
+    @mixin underline($visible, $transform) {
       content: '';
       position: absolute;
       width: 100%;
@@ -41,17 +41,29 @@
       bottom: 0;
       left: 0;
       background: #f0c9ba;
-      visibility: hidden;
+      visibility: $visible;
       border-radius: 5px;
-      transform: scaleX(0);
+      transform: scaleX($transform);
       transition: 0.25s linear;
     }
 
-    &:hover::before {
-      visibility: visible;
-      -webkit-transform: scaleX(1);
-      -moz-transform: scaleX(1);
-      transform: scaleX(1);
+    &.is-active {
+      &::after {
+        @include underline(visible, 1);
+      }
+    }
+
+    &:is(:not(.is-active)) {
+      &::before {
+        @include underline(hidden, 0);
+      }
+
+      &:hover::before {
+        visibility: visible;
+        -webkit-transform: scaleX(1);
+        -moz-transform: scaleX(1);
+        transform: scaleX(1);
+      }
     }
   }
 }
