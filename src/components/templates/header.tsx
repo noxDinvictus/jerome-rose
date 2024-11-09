@@ -1,8 +1,11 @@
 'use client';
 
 import { c, headerId } from '@/constant';
+import { IMAGES } from '@/constant/media.constant';
+import { useIsMobile } from '@/hooks/is-mobile';
 import { I } from '@/interface';
 import { goToId } from '@/utils/custom-function';
+import clsx from 'clsx';
 import moment from 'moment';
 import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
@@ -16,6 +19,8 @@ export default function Header() {
   const [isSticky, setIsSticky] = useState(false);
   const [initialLoad, setInitialLoad] = useState(true);
   const navRef = useRef<HTMLDivElement | null>(null);
+
+  const isMobile = useIsMobile(); // Use the custom hook here
 
   const router = useRouter();
   const route = usePathname();
@@ -43,25 +48,25 @@ export default function Header() {
   }, []);
 
   const navigate = (data: Readonly<I.Navigation>) => {
-    const { id, isLink } = data;
+    const { id, link } = data;
 
     if (id === '/') router.push(id);
     else if (route.includes(headerId.ourStory)) goToId(id);
-    else if (isLink) router.push(`wedding/${id}`);
+    else if (link) router.push(link);
     else goToId(id);
   };
 
   return (
-    <header id="header" className="font-pw">
+    <header id="header" className="font-pw" role="banner">
       <ProgressBar />
 
       {!initialLoad && (
         <NavigationBody navigate={navigate} isSticky={isSticky} />
       )}
 
-      <div className="container relative isolate h-screen" ref={navRef}>
+      <div className="container relative h-screen" ref={navRef}>
         <Image
-          src="/bg.webp"
+          src={IMAGES.hero}
           alt="hero"
           className="absolute -z-[1] object-cover"
           fill
@@ -72,10 +77,20 @@ export default function Header() {
         <NavigationResponsive navigate={navigate} />
 
         <div className="absolute bottom-0 z-10 mb-20 w-full text-center text-white">
-          <h1 className="animate__animated animate__zoomInDown animate__delay-7s mb-5 font-allura text-7xl font-bold">
-            Rose &amp; Jerome
+          <h1
+            className={clsx(
+              'animate__animated animate__zoomInDown mb-5 font-allura text-7xl font-bold md:text-5xl',
+              !isMobile && 'animate__delay-3s',
+            )}
+          >
+            Jerome & Rose
           </h1>
-          <p className="animate__animated animate__zoomInUp animate__delay-8s">
+          <p
+            className={clsx(
+              'animate__animated animate__zoomInUp',
+              isMobile ? 'animate__delay-1s' : 'animate__delay-4s',
+            )}
+          >
             {moment(c.date).format('MMMM DD, YYYY')}
           </p>
         </div>
