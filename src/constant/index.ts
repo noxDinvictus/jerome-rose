@@ -9,10 +9,10 @@ export const c = {
     googleMap: 'https://maps.app.goo.gl/BF2u3819a8RTR3oG6',
   },
   reception: {
-    place: "Bride's house",
+    place: 'The Table Steak',
     time: '11:00 - 14:00',
-    location: 'Bahay lang namin',
-    googleMap: 'https://maps.app.goo.gl/BF2u3819a8RTR3oG6',
+    location: 'Street 592, Phnom Penh 12152',
+    googleMap: 'https://maps.app.goo.gl/MteDQQt8LiMYCsmG7',
   },
 };
 
