@@ -11,7 +11,7 @@ export function NavigationBody({ navigate, isSticky }: Readonly<IProps>) {
     <nav
       role="navigation"
       className={clsx(
-        'animate__animated fixed top-0 z-10 w-full bg-gray-800 p-4 text-center text-white md:hidden',
+        'animate__animated fixed top-0 z-10 w-full bg-gray-800 p-4 text-center md:hidden',
         isSticky ? 'animate__bounceInLeft' : 'animate__bounceOutLeft',
       )}
     >
