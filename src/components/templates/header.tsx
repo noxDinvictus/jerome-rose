@@ -1,6 +1,6 @@
 'use client';
 
-import { c, headerId } from '@/constant';
+import { c } from '@/constant';
 import { IMAGES } from '@/constant/media.constant';
 import { useIsMobile } from '@/hooks/is-mobile';
 import { I } from '@/interface';
@@ -14,6 +14,7 @@ import { NavigationBody } from '../header/navigation/body';
 import { NavigationResponsive } from '../header/navigation/responsive';
 import { NavigationWeb } from '../header/navigation/web';
 import ProgressBar from '../header/progress-bar';
+import { JeromeAndRose } from '../shared/svg/jerome-and-rose.svg';
 
 export default function Header() {
   const [isSticky, setIsSticky] = useState(false);
@@ -51,7 +52,7 @@ export default function Header() {
     const { id, link } = data;
 
     if (id === '/') router.push(id);
-    else if (route.includes(headerId.ourStory)) goToId(id);
+    else if (route === link) goToId(id);
     else if (link) router.push(link);
     else goToId(id);
   };
@@ -64,7 +65,7 @@ export default function Header() {
         <Image
           src={IMAGES.hero}
           alt="hero"
-          className="absolute -z-[1] object-cover"
+          className="hero absolute -z-[1] object-cover"
           fill
           loading="lazy"
         />
@@ -72,18 +73,13 @@ export default function Header() {
         <NavigationWeb navigate={navigate} />
         <NavigationResponsive navigate={navigate} />
 
-        <div className="absolute bottom-0 z-10 mb-20 w-full text-center text-white">
-          <h1
-            className={clsx(
-              'animate__animated animate__zoomInDown mb-5 font-allura text-7xl font-bold md:text-5xl',
-              !isMobile && 'animate__delay-3s',
-            )}
-          >
-            Jerome & Rose
+        <div className="center relative isolate h-screen w-screen flex-col">
+          <h1 className="couple-name w-1/2 md:w-96 md:max-w-4xl sm:max-w-fit">
+            <JeromeAndRose />
           </h1>
           <p
             className={clsx(
-              'animate__animated animate__zoomInUp',
+              'animate__animated animate__zoomInUp text-3xl text-white md:text-xl',
               isMobile ? 'animate__delay-1s' : 'animate__delay-4s',
             )}
           >
