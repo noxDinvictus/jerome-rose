@@ -1,68 +1,108 @@
-.progress-bar-striped {
-  background-image: linear-gradient(
-    45deg,
-    rgba(255, 255, 255, 0.15) 25%,
-    transparent 25%,
-    transparent 50%,
-    rgba(255, 255, 255, 0.15) 50%,
-    rgba(255, 255, 255, 0.15) 75%,
-    transparent 75%,
-    transparent
-  );
-  background-size: 1rem 1rem;
-  animation: 3s linear infinite progress-bar-stripes;
-}
-
-@keyframes progress-bar-stripes {
-  from {
-    background-position: 40px 0;
+header {
+  .progress-bar-striped {
+    background-image: linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.15) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.15) 50%,
+      rgba(255, 255, 255, 0.15) 75%,
+      transparent 75%,
+      transparent
+    );
+    background-size: 1rem 1rem;
+    animation: 3s linear infinite progress-bar-stripes;
   }
-  to {
-    background-position: 0 0;
+
+  @keyframes progress-bar-stripes {
+    from {
+      background-position: 40px 0;
+    }
+    to {
+      background-position: 0 0;
+    }
   }
-}
 
-.header-nav-wrapper {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  .hero {
+    animation: zoom-in-zoom-out 6s ease forwards;
+  }
 
-  & > button {
-    text-decoration: none;
-    color: #f0c9ba;
-    margin: 10px 0;
-    position: relative;
+  @keyframes zoom-in-zoom-out {
+    0% {
+      transform: scale(1.5, 1.5);
+    }
+    100% {
+      transform: scale(1, 1);
+    }
+  }
 
-    @mixin underline($visible, $transform) {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 3px;
-      bottom: 0;
-      left: 0;
-      background: #f0c9ba;
-      visibility: $visible;
-      border-radius: 5px;
-      transform: scaleX($transform);
-      transition: 0.25s linear;
+  .couple-name {
+    svg path {
+      fill: transparent;
+      stroke: white;
+      stroke-width: 0.1;
+      stroke-dasharray: 50;
+      stroke-dashoffset: 50;
+      animation: textAnimation 4s ease-in-out 1 forwards;
     }
 
-    &.is-active {
-      &::after {
-        @include underline(visible, 1);
+    @keyframes textAnimation {
+      0% {
+        stroke-dashoffset: 50;
+      }
+      80% {
+        stroke-width: 0.5;
+        fill: transparent;
+      }
+      100% {
+        fill: white;
+        stroke-dashoffset: 0;
       }
     }
+  }
 
-    &:is(:not(.is-active)) {
-      &::before {
-        @include underline(hidden, 0);
+  .header-nav-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    & > button {
+      text-decoration: none;
+      color: #f0c9ba;
+      margin: 10px 0;
+      position: relative;
+
+      @mixin underline($visible, $transform) {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        bottom: 0;
+        left: 0;
+        background: #f0c9ba;
+        visibility: $visible;
+        border-radius: 5px;
+        transform: scaleX($transform);
+        transition: 0.25s linear;
       }
 
-      &:hover::before {
-        visibility: visible;
-        -webkit-transform: scaleX(1);
-        -moz-transform: scaleX(1);
-        transform: scaleX(1);
+      &.is-active {
+        &::after {
+          @include underline(visible, 1);
+        }
+      }
+
+      &:is(:not(.is-active)) {
+        &::before {
+          @include underline(hidden, 0);
+        }
+
+        &:hover::before {
+          visibility: visible;
+          -webkit-transform: scaleX(1);
+          -moz-transform: scaleX(1);
+          transform: scaleX(1);
+        }
       }
     }
   }
