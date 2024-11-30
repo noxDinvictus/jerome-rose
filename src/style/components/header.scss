@@ -23,19 +23,6 @@ header {
     }
   }
 
-  .hero {
-    animation: zoom-in-zoom-out 6s ease forwards;
-  }
-
-  @keyframes zoom-in-zoom-out {
-    0% {
-      transform: scale(1.5, 1.5);
-    }
-    100% {
-      transform: scale(1, 1);
-    }
-  }
-
   .couple-name {
     svg path {
       fill: transparent;
