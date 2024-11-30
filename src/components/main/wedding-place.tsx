@@ -83,7 +83,7 @@ interface IPlaceDescription extends I.Image, I.Child {
 
 function PlaceDescription(props: IPlaceDescription) {
   return (
-    <div className="relative isolate h-[706px] w-[48%] gap-4 [transition:width_0.5s_ease] md:w-full">
+    <div className="relative isolate mt-14 h-[706px] w-[48%] gap-4 [transition:width_0.5s_ease] md:mt-0 md:w-full">
       <Image
         src={props.src}
         fill
