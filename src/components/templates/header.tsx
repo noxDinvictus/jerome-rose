@@ -55,6 +55,8 @@ export default function Header() {
     else goToId(id);
   };
 
+  const animate = 'animate__animated animate__zoomInUp text-white';
+
   return (
     <header id="header" className="font-pw" role="banner">
       <ProgressBar />
@@ -71,19 +73,29 @@ export default function Header() {
         <NavigationWeb navigate={navigate} />
         <NavigationResponsive navigate={navigate} />
 
-        <div className="center relative isolate h-screen w-screen flex-col">
+        <div className="center relative isolate h-screen w-full flex-col">
           <h1 className="couple-name w-1/2 md:w-96 md:max-w-4xl sm:max-w-fit">
             <JeromeAndRose />
           </h1>
-          <p
-            className={clsx(
-              'animate__animated animate__zoomInUp text-3xl text-white md:text-xl',
-              isMobile ? 'animate__delay-1s' : 'animate__delay-4s',
-            )}
-          >
-            <span className="mr-2">Isaiah 60:22:</span>
-            <q>When the time is right, I the Lord will make it happen</q>
-          </p>
+          <div className="absolute bottom-[30px] flex flex-col text-center">
+            <p
+              className={clsx(
+                animate,
+                `text-3xl md:text-xl animate__delay-${isMobile ? '1' : '5'}s`,
+              )}
+            >
+              <span className="mr-2">Isaiah 60:22:</span>
+            </p>
+
+            <p
+              className={clsx(
+                animate,
+                `text-2xl md:text-xl animate__delay-${isMobile ? '2' : '5'}s`,
+              )}
+            >
+              <q>When the time is right, I the Lord will make it happen</q>
+            </p>
+          </div>
         </div>
       </div>
 
