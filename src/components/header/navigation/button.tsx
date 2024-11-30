@@ -1,17 +1,21 @@
 'use client';
 
-import { headerNav } from '@/constant';
+import { headerId, headerNav, landingPageSubNav } from '@/constant';
 import { I } from '@/interface';
 import clsx from 'clsx';
 import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 interface IProps extends Readonly<I.Navigate> {
   readonly className?: string;
   readonly delay?: boolean;
+  readonly isSticky?: boolean;
 }
 
 export default function NavigationButton(props: IProps) {
-  const { navigate, className, delay } = props;
+  const { navigate, className, delay, isSticky } = props;
+
+  const [currentNav, setCurrentNav] = useState(Array.from(headerNav));
 
   const route = usePathname();
 
@@ -19,9 +23,19 @@ export default function NavigationButton(props: IProps) {
     if (route === data.link) return 'is-active';
   };
 
+  useEffect(() => {
+    if (route === headerId.wedding) {
+      const updatedNav = [...headerNav];
+      updatedNav.splice(1, 0, ...landingPageSubNav);
+      setCurrentNav(updatedNav);
+    } else {
+      setCurrentNav([...headerNav]);
+    }
+  }, [route]);
+
   return (
     <>
-      {headerNav.map((e, i) => {
+      {currentNav.map((e, i) => {
         return (
           <button
             onClick={() => navigate(e)}
@@ -34,7 +48,9 @@ export default function NavigationButton(props: IProps) {
             )}
             name={e.name}
           >
-            {e.name}
+            <span className={clsx(!e.link && !isSticky && 'ml-4')}>
+              {e.name}
+            </span>
           </button>
         );
       })}
