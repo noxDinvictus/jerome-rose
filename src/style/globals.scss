@@ -13,6 +13,14 @@
   .year {
     @apply mb-8 text-2xl font-bold;
   }
+
+  .default-h {
+    @apply my-3 text-center text-3xl text-bride-100 md:text-xl;
+  }
+
+  .default-p {
+    @apply my-3 text-center text-2xl text-white md:text-lg;
+  }
 }
 
 // * don't allow image drag
