@@ -18,7 +18,7 @@ export default function GoogleMap({ loadMap }: IProps) {
           title="googl map"
         />
       ) : (
-        <Loader />
+        <Loader notScreen={true} />
       )}
     </div>
   );
