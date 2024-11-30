@@ -1,12 +1,10 @@
 'use client';
 
-import { c } from '@/constant';
 import { IMAGES } from '@/constant/media.constant';
 import { useIsMobile } from '@/hooks/is-mobile';
 import { I } from '@/interface';
 import { goToId } from '@/utils/custom-function';
 import clsx from 'clsx';
-import moment from 'moment';
 import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
@@ -65,7 +63,7 @@ export default function Header() {
         <Image
           src={IMAGES.hero}
           alt="hero"
-          className="hero absolute -z-[1] object-cover"
+          className="absolute -z-[1] object-cover"
           fill
           loading="lazy"
         />
@@ -83,7 +81,8 @@ export default function Header() {
               isMobile ? 'animate__delay-1s' : 'animate__delay-4s',
             )}
           >
-            {moment(c.date).format('MMMM DD, YYYY')}
+            <span className="mr-2">Isaiah 60:22:</span>
+            <q>When the time is right, I the Lord will make it happen</q>
           </p>
         </div>
       </div>
