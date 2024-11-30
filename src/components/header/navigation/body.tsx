@@ -16,7 +16,7 @@ export function NavigationBody({ navigate, isSticky }: Readonly<IProps>) {
       )}
     >
       <div className="header-nav-wrapper">
-        <NavButton navigate={navigate} />
+        <NavButton navigate={navigate} isSticky={isSticky} />
       </div>
     </nav>
   );
