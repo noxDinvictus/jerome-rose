@@ -4,13 +4,13 @@ export const c = {
   date: '2024-12-20T00:00:00.000Z', // 20 December 2024
   ceremony: {
     place: 'Embassy Of The Republic Of The Philippines',
-    time: '07:00 - 08:00',
+    time: '',
     location: 'Phnom, 182 Preah Norodom Blvd (41), Penh 12301',
     googleMap: 'https://maps.app.goo.gl/BF2u3819a8RTR3oG6',
   },
   reception: {
     place: 'The Table Steak',
-    time: '11:00 - 14:00',
+    time: '5:30pm - 10:00pm',
     location: 'Street 592, Phnom Penh 12152',
     googleMap: 'https://maps.app.goo.gl/MteDQQt8LiMYCsmG7',
   },
@@ -28,7 +28,7 @@ export const headerId = {
 export const headerNav: I.Navigation[] = [
   {
     name: 'Wedding',
-    id: '/',
+    id: headerId.wedding,
     link: '/',
   },
   {
