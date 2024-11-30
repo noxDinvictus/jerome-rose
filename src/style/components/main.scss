@@ -120,3 +120,51 @@
     outline-offset: -5px;
   }
 }
+
+@mixin dress-code() {
+  svg path {
+    mix-blend-mode: multiply;
+    fill: transparent;
+    stroke: black;
+    stroke-width: 0.1;
+    stroke-dasharray: 50;
+    stroke-dashoffset: 50;
+    animation: dress 4s ease-in-out 1 forwards;
+
+    @keyframes dress {
+      0% {
+        stroke-dashoffset: 50;
+      }
+      80% {
+        stroke-width: 0.5;
+        fill: transparent;
+      }
+      100% {
+        fill: var(--color);
+        stroke-dashoffset: 0;
+      }
+    }
+  }
+}
+
+.dress-code {
+  &--male-1 {
+    --color: #040348;
+    @include dress-code();
+  }
+
+  &--male-2 {
+    --color: #353d64;
+    @include dress-code();
+  }
+
+  &--female-1 {
+    --color: #d99a89;
+    @include dress-code();
+  }
+
+  &--female-2 {
+    --color: #f0c9ba;
+    @include dress-code();
+  }
+}
