@@ -10,9 +10,9 @@ export default function GiftGuide() {
         With all that we have, we&apos;ve been truly blessed.
       </p>
       <p className="default-p">
-        Your Presence and prayers are all that we request.
+        Your presence and prayers are all that we request.
       </p>
-      <p className="default-p">But if you desire tyo give nonetheless,</p>
+      <p className="default-p">But if you desire you give nonetheless,</p>
       <p className="default-p">
         <b>Monetary gift</b> is one we suggest.
       </p>
