@@ -4,7 +4,7 @@ import { I } from '@/interface';
 
 export default function Layout({ children }: Readonly<I.Child>) {
   return (
-    <div id={headerId.wedding}>
+    <div id={headerId.wedding} aria-hidden="true">
       <Header />
       {children}
     </div>
