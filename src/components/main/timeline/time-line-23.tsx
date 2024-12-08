@@ -7,7 +7,7 @@ export default function HTime() {
 }
 
 function Left() {
-  return <div>Picture here</div>;
+  return <div></div>;
 }
 
 function Right() {

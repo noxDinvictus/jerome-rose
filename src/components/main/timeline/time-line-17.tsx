@@ -5,7 +5,7 @@ export default function TL17() {
 }
 
 function Left() {
-  return <div>Picture here</div>;
+  return <div></div>;
 }
 
 function Right() {
