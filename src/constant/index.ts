@@ -3,14 +3,14 @@ import { I } from '@/interface';
 export const c = {
   date: '2024-12-20T14:00:00.000Z', // 20 December 2024, 2 pm
   ceremony: {
-    place: 'Embassy Of The Republic Of The Philippines',
+    place: 'Embassy Of The Republic Of The Philippines in Cambodia',
     time: '',
     location: 'Phnom, 182 Preah Norodom Blvd (41), Penh 12301',
     googleMap: 'https://maps.app.goo.gl/BF2u3819a8RTR3oG6',
   },
   reception: {
-    place: 'The Table Steak',
-    time: '5:30pm - 10:00pm',
+    place: 'The Table',
+    time: '5:30pm - 9:00pm',
     location: 'Street 592, Phnom Penh 12152',
     googleMap: 'https://maps.app.goo.gl/MteDQQt8LiMYCsmG7',
   },
@@ -21,6 +21,7 @@ export const headerId = {
   dressCode: 'dressCode',
   giftGuide: 'giftGuide',
   theProposal: 'the-proposal',
+  photoShoot: 'photoshoot',
   reception: 'reception',
   ourStory: 'our-story',
 };
@@ -35,6 +36,11 @@ export const headerNav: I.Navigation[] = [
     name: 'The Proposal',
     id: headerId.theProposal,
     link: `/wedding/${headerId.theProposal}`,
+  },
+  {
+    name: 'Photoshoot ',
+    id: headerId.photoShoot,
+    link: `/wedding/${headerId.photoShoot}`,
   },
   {
     name: 'Our Story',
