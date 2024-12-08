@@ -5,7 +5,7 @@ export default function TL15() {
 }
 
 function Left() {
-  return <div>Picture here</div>;
+  return <div></div>;
 }
 
 function Right() {
@@ -36,7 +36,7 @@ function Right() {
           <span>Rose:</span>Bakit?!
         </p>
         <p className="flex gap-1">
-          <span>Jerome:</span>Sungit naman neto?!
+          <span>Jerome:</span>Sungit naman neto
         </p>
       </div>
 

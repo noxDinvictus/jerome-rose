@@ -43,7 +43,7 @@ export default function CountDownTimer() {
   }, [targetDate]);
 
   return (
-    <div className="my-10 flex w-full flex-wrap items-start justify-center gap-4">
+    <div className="my-5 flex w-full flex-wrap items-start justify-center gap-4">
       {timeCounter.years > 0 && (
         <Timers time={timeCounter.years} title="Years" isMarried={isMarried} />
       )}
@@ -97,7 +97,7 @@ function Timers({ time, title, isMarried }: ITimers) {
   const c = twMerge('mb-1 text-center', animate ? animateClass : '');
 
   return (
-    <div className="mb-1 w-24 rounded-lg bg-white p-2 text-3xl font-bold shadow-lg">
+    <div className="mb-1 w-24 rounded-lg bg-white p-2 text-3xl font-bold text-groom-900 shadow-lg">
       <p className={c}>{time}</p>
       <p className="w-full text-center text-base">{displayTitle}</p>
     </div>

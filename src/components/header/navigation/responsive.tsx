@@ -10,7 +10,7 @@ export function NavigationResponsive({ navigate }: Readonly<I.Navigate>) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <aside className="fixed left-5 top-0 z-20 hidden text-white md:block">
+    <aside className="fixed left-5 top-0 z-20 hidden text-bride-100 md:block">
       <div className="cursor-pointer">
         <button
           onClick={() => setIsOpen(!isOpen)}
@@ -19,7 +19,7 @@ export function NavigationResponsive({ navigate }: Readonly<I.Navigate>) {
         >
           <div
             className={clsx(
-              'animate__animated absolute rounded-xl bg-groom-100',
+              'animate__animated absolute rounded-xl bg-gray-800',
               isOpen ? 'animate__hinge' : 'animate__backInLeft',
             )}
           >
@@ -27,13 +27,13 @@ export function NavigationResponsive({ navigate }: Readonly<I.Navigate>) {
           </div>
 
           {isOpen && (
-            <div className="animate__animated animate__backInLeft animate__delay-1s absolute rounded-full bg-groom-100">
+            <div className="animate__animated animate__backInLeft animate__delay-1s absolute rounded-full bg-gray-800">
               <Close />
             </div>
           )}
         </button>
         <AutoExpand isOpen={isOpen}>
-          <div className="mt-8 flex flex-col gap-5 rounded-xl bg-groom-100 p-2 py-2 text-white">
+          <div className="mt-8 flex flex-col gap-5 rounded-xl bg-gray-800 p-2 py-2 text-bride-100">
             <NavButton navigate={navigate} className="text-left" />
           </div>
         </AutoExpand>

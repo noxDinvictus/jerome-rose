@@ -1,3 +1,5 @@
+@use '../abstract/mixin' as *;
+
 @mixin animate($direction) {
   animation: #{$direction} 1s ease-in 0s infinite;
 }
@@ -28,4 +30,141 @@
 
 .animate-count-up {
   @include animate(count-up);
+}
+
+// SOURCE: https://codepen.io/alvaromontoro/pen/yLZVJRR
+
+.gallery {
+  --size: 100px;
+  display: grid;
+  grid-template-columns: repeat(10, var(--size));
+  grid-auto-rows: var(--size);
+  margin-bottom: var(--size);
+  place-items: start center;
+  gap: 5px;
+
+  @include lg {
+    grid-template-columns: repeat(6, var(--size));
+  }
+
+  @include sm {
+    grid-template-columns: repeat(1fr, var(--size));
+  }
+
+  &:has(:hover) img:not(:hover),
+  &:has(:focus) img:not(:focus) {
+    filter: brightness(0.5) contrast(0.5);
+  }
+}
+
+.image {
+  object-fit: cover;
+  width: calc(var(--size) * 2);
+  height: calc(var(--size) * 2);
+  clip-path: path(
+    'M90,10 C100,0 100,0 110,10 190,90 190,90 190,90 200,100 200,100 190,110 190,110 110,190 110,190 100,200 100,200 90,190 90,190 10,110 10,110 0,100 0,100 10,90Z'
+  );
+  transition:
+    clip-path 0.25s,
+    filter 0.75s;
+  grid-column: auto / span 2;
+  border-radius: 5px;
+
+  @include min-lg {
+    &:nth-child(7n - 1) {
+      grid-column: 2 / span 2;
+    }
+  }
+
+  @include lg {
+    &:nth-child(5n - 1) {
+      grid-column: 2 / span 2;
+    }
+
+    &:last-child {
+      display: none;
+    }
+  }
+
+  @include sm {
+    &:nth-child(even) {
+      grid-column: 2 / span 2;
+    }
+
+    &:nth-child(odd),
+    &:last-child {
+      grid-column: 1 / span 2;
+      display: block;
+    }
+  }
+
+  &:hover {
+    clip-path: path(
+      'M0,0 C0,0 200,0 200,0 200,0 200,100 200,100 200,100 200,200 200,200 200,200 100,200 100,200 100,200 100,200 0,200 0,200 0,100 0,100 0,100 0,100 0,100Z'
+    );
+    z-index: 1;
+    transition:
+      clip-path 0.25s,
+      filter 0.25s;
+  }
+
+  &:focus {
+    clip-path: path(
+      'M0,0 C0,0 200,0 200,0 200,0 200,100 200,100 200,100 200,200 200,200 200,200 100,200 100,200 100,200 100,200 0,200 0,200 0,100 0,100 0,100 0,100 0,100Z'
+    );
+    z-index: 1;
+    transition:
+      clip-path 0.25s,
+      filter 0.25s;
+    outline: 1px dashed black;
+    outline-offset: -5px;
+  }
+}
+
+@mixin dress-code() {
+  svg path {
+    mix-blend-mode: multiply;
+    fill: transparent;
+    stroke: black;
+    stroke-width: 0.1;
+    stroke-dasharray: 50;
+    stroke-dashoffset: 50;
+    animation: dress 4s ease-in-out 1 forwards;
+
+    @keyframes dress {
+      0% {
+        stroke-dashoffset: 50;
+      }
+      80% {
+        stroke-width: 0.5;
+        fill: transparent;
+      }
+      100% {
+        fill: var(--color);
+        stroke-dashoffset: 0;
+      }
+    }
+  }
+}
+
+.dress-code {
+  &--male-1 {
+    --color: #040348;
+    @include dress-code();
+  }
+
+  &--male-2 {
+    --color: #353d64;
+    @include dress-code();
+  }
+
+  &--female-1 {
+    --color: #d99a89;
+    @include dress-code();
+  }
+
+  &--female-2 {
+    --color: #f0c9ba;
+    @include dress-code();
+  }
 }

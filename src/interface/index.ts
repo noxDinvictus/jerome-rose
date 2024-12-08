@@ -8,10 +8,15 @@ export namespace I {
   export interface Navigation {
     name: string;
     id: string;
-    isLink: boolean;
+    link?: string;
   }
 
   export interface Navigate {
     navigate(data: Readonly<I.Navigation>): void;
+  }
+
+  export interface Image {
+    readonly src: string;
+    readonly alt: string;
   }
 }
