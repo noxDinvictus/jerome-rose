@@ -44,7 +44,7 @@ export default function WeddingPlace() {
         id={headerId.reception}
       >
         <PlaceDescription
-          src={IMAGES.hero}
+          src={IMAGES.FORMAL.H}
           alt="wedding"
           time={c.ceremony.time}
           location={c.ceremony.location}
@@ -56,7 +56,7 @@ export default function WeddingPlace() {
         </PlaceDescription>
 
         <PlaceDescription
-          src={IMAGES.hero}
+          src={IMAGES.CAMBODIA.E}
           alt="reception"
           time={c.reception.time}
           location={c.reception.location}
