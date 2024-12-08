@@ -44,7 +44,7 @@ export default function WeddingPlace() {
         id={headerId.reception}
       >
         <PlaceDescription
-          src={IMAGES.FORMAL.H}
+          src={IMAGES.FORMAL.G}
           alt="wedding"
           time={c.ceremony.time}
           location={c.ceremony.location}
