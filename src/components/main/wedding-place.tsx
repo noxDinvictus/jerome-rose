@@ -110,16 +110,18 @@ function PlaceDescription(props: IPlaceDescription) {
 
         <p className="text-center text-base font-light">{props.location}</p>
 
-        <a
-          href={props.map}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`map location ${props.title}`}
-          className="center text-orchid-500 inline-flex h-14 w-full rounded-2xl bg-white text-black"
-        >
-          <MapLocation />
-          <p className="text-orchid-500">Open Map</p>
-        </a>
+        <div aria-hidden="true">
+          <a
+            href={props.map}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Open Map ${props.title}`}
+            className="center text-orchid-500 inline-flex h-14 w-full rounded-2xl bg-white text-black"
+          >
+            <MapLocation />
+            <p className="text-orchid-500">Open Map</p>
+          </a>
+        </div>
       </div>
     </div>
   );

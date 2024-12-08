@@ -39,7 +39,7 @@ export default function NavigationButton(props: IProps) {
         return (
           <button
             onClick={() => navigate(e)}
-            aria-label="navigation toggle"
+            aria-label={`navigation toggle ${e.name}`}
             key={e.id}
             className={clsx(
               isActive(e),
