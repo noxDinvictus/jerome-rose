@@ -2,12 +2,12 @@
 
 import PageContainer from '@/components/elements/page-container';
 import { headerId } from '@/constant';
-import { IMAGES } from '@/constant/media.constant';
+import { IMAGES, VIDEO } from '@/constant/media.constant';
 import { useInView } from '@/hooks/in-view';
 import Image from 'next/image';
 
 export default function Page() {
-  const { ref } = useInView<HTMLDivElement>();
+  const { ref, isInView } = useInView<HTMLDivElement>();
 
   return (
     <PageContainer id={headerId.theProposal}>
@@ -15,7 +15,7 @@ export default function Page() {
         <Gallery />
       </div>
 
-      {/* {isInView && <Video />} */}
+      {isInView && <Video />}
     </PageContainer>
   );
 }
@@ -39,17 +39,17 @@ function Gallery() {
   );
 }
 
-// function Video() {
-//   return (
-//     <video
-//       src={VIDEO.proposal}
-//       controls={true}
-//       autoPlay={true}
-//       loop={true}
-//       muted={true}
-//       className="mt-10 h-full w-80 shadow-2xl"
-//     >
-//       Your browser does not support the video tag.
-//     </video>
-//   );
-// }
+function Video() {
+  return (
+    <video
+      src={VIDEO.proposal}
+      controls={true}
+      autoPlay={true}
+      loop={true}
+      muted={true}
+      className="mt-10 h-full w-80 shadow-2xl"
+    >
+      Your browser does not support the video tag.
+    </video>
+  );
+}
