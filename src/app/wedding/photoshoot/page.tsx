@@ -61,7 +61,7 @@ function Cambodia() {
           ))}
       </div>
 
-      <div className="center gap-10">
+      <div className="center flex-wrap gap-10 md:gap-0">
         {Object.entries(IMAGES.CAMBODIA)
           .slice(7, 10)
           .map(([key, src]) => (
