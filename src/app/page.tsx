@@ -23,7 +23,7 @@ export default function Home() {
         </h1>
 
         <p className="my-3 text-center text-2xl text-groom-900">
-          Save the date!!!
+          Save the date!
         </p>
 
         <p
