@@ -31,3 +31,18 @@ export async function goToId(id: string) {
 export function delay(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
+
+const alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'];
+
+export function getImages(link: string): Record<string, string> {
+  let images: Record<string, string> = {};
+
+  alpha.forEach((e) => {
+    images = {
+      ...images,
+      [e.toUpperCase()]: `/${link}/${e}.jpg`,
+    };
+  });
+
+  return images;
+}

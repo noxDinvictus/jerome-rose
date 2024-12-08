@@ -1,5 +1,6 @@
 import PageContainer from '@/components/elements/page-container';
 import TL15 from '@/components/main/timeline/time-line-15';
+import Footer from '@/components/templates/footer';
 import { headerId } from '@/constant';
 import dynamic from 'next/dynamic';
 
@@ -15,17 +16,21 @@ const timelines = Array.from({ length: 9 }, (_, i) => {
 
 export default function Page() {
   return (
-    <PageContainer id={headerId.ourStory}>
-      <TL15 />
-      {timelines.slice(0, 4).map((TimeLine) => (
-        <TimeLine key={TimeLine.displayName} />
-      ))}
-
-      <div className="text-white">
-        {timelines.slice(4).map((TimeLine) => (
+    <>
+      <PageContainer id={headerId.ourStory}>
+        <TL15 />
+        {timelines.slice(0, 4).map((TimeLine) => (
           <TimeLine key={TimeLine.displayName} />
         ))}
-      </div>
-    </PageContainer>
+
+        <div className="text-white">
+          {timelines.slice(4).map((TimeLine) => (
+            <TimeLine key={TimeLine.displayName} />
+          ))}
+        </div>
+      </PageContainer>
+
+      <Footer />
+    </>
   );
 }

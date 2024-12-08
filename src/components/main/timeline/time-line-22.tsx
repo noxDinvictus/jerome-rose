@@ -39,5 +39,5 @@ function Left() {
 }
 
 function Right() {
-  return <div>Picture here</div>;
+  return <div></div>;
 }

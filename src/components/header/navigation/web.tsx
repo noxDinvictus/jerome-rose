@@ -13,7 +13,7 @@ export function NavigationWeb({ navigate }: Readonly<I.Navigate>) {
     <nav
       className={clsx('absolute left-5 z-20 md:top-[30%] md:hidden', isWedding)}
     >
-      <div className="flex h-full flex-col gap-5 text-white">
+      <div className="flex h-full flex-col gap-5 text-groom-100">
         <NavButton
           navigate={navigate}
           className="animate__animated animate__lightSpeedInLeft text-left"

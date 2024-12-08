@@ -26,7 +26,7 @@ header {
   .couple-name {
     svg path {
       fill: transparent;
-      stroke: white;
+      stroke: #353d64;
       stroke-width: 0.1;
       stroke-dasharray: 50;
       stroke-dashoffset: 50;
@@ -42,7 +42,7 @@ header {
         fill: transparent;
       }
       100% {
-        fill: white;
+        fill: #353d64;
         stroke-dashoffset: 0;
       }
     }

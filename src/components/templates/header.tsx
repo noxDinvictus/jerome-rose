@@ -55,15 +55,15 @@ export default function Header() {
     else goToId(id);
   };
 
-  const animate = 'animate__animated animate__zoomInUp text-white';
+  const animate = 'animate__animated animate__zoomInUp text-groom-100';
 
   return (
     <header id="header" className="font-pw" role="banner">
       <ProgressBar />
 
-      <div className="container relative h-screen" ref={navRef}>
+      <div className="container relative h-dvh" ref={navRef}>
         <Image
-          src={IMAGES.hero}
+          src={IMAGES.FORMAL.J}
           alt="hero"
           className="absolute -z-[1] object-cover"
           fill
@@ -77,7 +77,7 @@ export default function Header() {
           <h1 className="couple-name w-1/2 md:w-96 md:max-w-4xl sm:max-w-fit">
             <JeromeAndRose />
           </h1>
-          <div className="absolute bottom-[30px] flex flex-col text-center">
+          <div className="absolute bottom-[70px] flex flex-col text-center">
             <p
               className={clsx(
                 animate,

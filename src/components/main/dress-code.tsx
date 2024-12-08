@@ -51,7 +51,7 @@ function Text() {
   return (
     <div className="mt-20 md:mt-3">
       <p className="default-h">Dress Code</p>
-      <p className="default-p">Please come in with your casual attire.</p>
+      <p className="default-p">Please come in casual attire.</p>
       <p className="default-p">
         We encourage you to dress according to our theme.
       </p>
