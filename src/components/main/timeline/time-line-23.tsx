@@ -53,7 +53,7 @@ function Right() {
       </p>
 
       <p className="my-5">
-        <span className="font-bold">October 20,2024</span> - One of the best
+        <span className="font-bold">October 20,2023</span> - One of the best
         moment of Rose&apos;s life ... Jerome proposed to her.
       </p>
 
