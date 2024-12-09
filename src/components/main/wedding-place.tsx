@@ -116,7 +116,7 @@ function PlaceDescription(props: IPlaceDescription) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`Open Map ${props.title}`}
-            className="center text-orchid-500 inline-flex h-14 w-full rounded-2xl bg-white text-black"
+            className="center text-orchid-500 inline-flex h-14 w-full rounded-2xl bg-white p-4 text-black"
           >
             <MapLocation />
             <p className="text-orchid-500">Open Map</p>
