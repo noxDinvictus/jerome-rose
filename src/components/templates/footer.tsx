@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <div className="container mx-auto bg-bride-100 p-10">
+    <div className="container mx-auto bg-bride-100 p-10 font-pw">
       <div className="m-auto flex max-w-7xl flex-col items-center lg:max-w-5xl md:mx-8">
         <p className="my-2">
           Seven years have flown by, and as we look back, a flood of cherished
