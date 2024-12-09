@@ -33,6 +33,7 @@ function Gallery() {
           height={100}
           className="image"
           loading="lazy"
+          unoptimized
         />
       ))}
     </article>
