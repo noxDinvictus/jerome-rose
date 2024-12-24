@@ -1,7 +1,7 @@
 import { I } from '@/interface';
 
 export const c = {
-  date: '2024-12-20T14:00:00.000Z', // 20 December 2024, 2 pm
+  date: '2024-12-20T07:00:00.000Z', // 20 December 2024, 2 pm cambodian time
   ceremony: {
     place: 'Embassy Of The Republic Of The Philippines in Cambodia',
     time: '',
