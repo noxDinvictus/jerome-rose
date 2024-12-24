@@ -19,16 +19,12 @@ export default function Home() {
       <Header />
       <PageContainer id={headerId.wedding}>
         <h1 className="animate__animated animate__flipInX text-center text-5xl font-bold text-groom-900">
-          WE ARE GETTING MARRIED !
+          WE ARE MARRIED !
         </h1>
-
-        <p className="my-3 text-center text-2xl text-groom-900">
-          Save the date!
-        </p>
 
         <p
           className={clsx(
-            'text-3xl text-groom-900 md:text-xl',
+            'my-3 text-3xl text-groom-900 md:text-xl',
             isMobile ? 'animate__delay-1s' : 'animate__delay-4s',
           )}
         >
